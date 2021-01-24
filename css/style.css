@@ -1,0 +1,483 @@
+/*brown - ce574f */
+/*pink - ffb7cb */
+/*deep - fea5b9 */
+/*dark - 707070*/
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Roboto:wght@100;300;400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  /* color: #707070; */
+}
+section.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  color: #ce574f;
+  background-color: #ffb7cb;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+}
+section.navbar .navbar__burger {
+  display: none;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+section.navbar .navbar__burger .line {
+  width: 30px;
+  height: 3px;
+  background-color: #ce574f;
+  margin: 3px;
+}
+section.navbar header {
+  font-family: "Luckiest Guy", cursive;
+  letter-spacing: 0.1rem;
+  font-size: 1.2rem;
+}
+section.navbar .navbar__left {
+  width: 80%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+section.navbar .navbar__left .nav-links {
+  display: flex;
+  justify-content: space-evenly;
+  margin-right: auto;
+  width: 80%;
+}
+section.navbar .navbar__left .nav-links a,
+section.navbar .navbar__left .order-btn {
+  display: block;
+  color: #ce574f;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+section.navbar .navbar__left .nav-links a {
+  padding: .5rem .89rem;
+  text-decoration: none;
+  border-radius: 3px;
+}
+section.navbar .navbar__left .nav-links a .navbar__link-icon {
+  display: none;
+  color: #ce574f96;
+  font-size: 1rem;
+}
+section.navbar .navbar__burger:hover,
+section.navbar .navbar__left .nav-links a:hover,
+section.navbar .navbar__left .nav-links a.active{
+  background-color: #ffffff30;
+}
+
+section.navbar .navbar__left .order-btn {
+  font-size: 0.75rem;
+  font-weight: 700;
+  background-color: #fff;
+  border: 0;
+  outline: none;
+  min-width: 90px;
+  padding: 5px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+section.navbar .navbar__left .order-btn:hover {
+  transform: scale(1.1);
+}
+@media screen and (max-width: 670px) {
+  section.navbar {
+    display: block;
+  }
+  section.navbar .navbar-sm-visible {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+  }
+  section.navbar .navbar__burger {
+    display: block;
+  }
+  section.navbar.expanded .navbar__burger {
+    /* styles to cross the lines */
+  }
+  section.navbar .navbar__left,
+  section.navbar .navbar__left .nav-links {
+    display: block;
+    width: 100%;
+  }
+  section.navbar .navbar__left {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+  }
+  section.navbar.expanded .navbar__left {
+    max-height: 100vh;
+  }
+  section.navbar .navbar__left .nav-links a {
+    margin: 0.3rem 0;
+    padding: 0.7rem 1rem 0.7rem 0.3rem;
+    width: 100%;
+    transition: padding-left 0.3s;
+    display: flex;
+    justify-content: space-between;
+  }
+  section.navbar .navbar__left .nav-links a:hover {
+    padding-left: 1.5rem;
+  }
+  section.navbar .navbar__left .nav-links a:hover .navbar__link-icon {
+    display: block;
+  }
+  section.navbar .navbar__left .order-btn {
+    margin: 0.5rem auto;
+  }
+}
+
+/* hero section */
+section.hero {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  background-color: #ffb7cb;
+  padding: 4rem 2rem 1rem;
+  position: relative;
+}
+
+.hero .hero__header-text {
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-end; */
+  margin: 20px auto;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-family: "Luckiest Guy", cursive;
+}
+.hero .hero__header-text h2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.hero .hero__header-text h2 span:first-child {
+  color: #ce574f;
+}
+.hero .hero__header-text h2 span:last-child {
+  color: #fff;
+}
+.hero .hero__header-text button {
+  align-self: flex-start;
+  margin: 15px 0;
+  padding: 8px 15px;
+  color: #ce574f;
+  font-size: 0.75rem;
+  font-weight: 900;
+  background-color: #fff;
+  border: 0;
+  outline: none;
+  min-width: 90px;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 3px;
+}
+.hero .hero__header-text button:hover {
+  transform: scale(1.1);
+}
+.hero .hero__image img {
+  width: 100%;
+}
+.hero .social-icons {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.hero .social-icons a {
+  padding: 5px;
+  color: #fff;
+}
+.hero .social-icons a:hover {
+  color: #ce574f;
+}
+@media screen and (max-width: 670px) {
+  section.hero {
+    grid-template-columns: 1fr;
+  }
+  .hero .social-icons {
+    position: relative;
+    bottom: 0px;
+    left: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 50%;
+    margin: 20px auto 0;
+  }
+}
+section.about {
+  display: grid;
+  grid-template-columns: 40vw auto;
+  gap: 70px;
+  align-items: center;
+  padding: 3rem 2rem;
+  justify-items: center;
+}
+section.about .about__image {
+  width: 100%;
+  text-align: center;
+}
+section.about .about__image img {
+  width: 55%;
+}
+.about .about__text h2,
+.products h2,
+.flavour_card .flavour_card__text h3 {
+  font-family: "Luckiest Guy", cursive;
+  color: #ce574f;
+  padding: 1rem 0;
+}
+section.about .about__text p {
+  font-size: 0.9em;
+}
+@media screen and (max-width: 670px) {
+  section.about {
+    grid-template-columns: 1fr;
+  }
+  section.about .about__text {
+    grid-row: 1/2;
+  }
+  section.about .about__text {
+    text-align: center;
+  }
+}
+/* our products section */
+.products h2 {
+  text-align: center;
+  padding-top: 3rem;
+}
+.products .flavours {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 2rem;
+  margin-bottom: -12rem;
+}
+.products .flavours .flavour_card {
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px #aaa;
+  max-width: 270px;
+  padding: 0 1.5rem 1rem;
+  margin: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+}
+.flavour_card .flavour_card__image {
+  width: 150px;
+  height: 150px;
+  margin: 20px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.flavour_card .flavour_card__image img {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+.flavour_card .flavour_card__text {
+  text-align: center;
+  font-size: 0.85rem;
+}
+.flavour_card .flavour_card__text h3 {
+  letter-spacing: 0.1rem;
+}
+.flavour_card a {
+  display: block;
+  margin-top: 4.5rem;
+  box-shadow: 0px 3px 5px #ccc;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  text-decoration: none;
+  color: #ce574f;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+}
+.flavour_card a:hover {
+  box-shadow: 0 0 0 0 #fff;
+  border-color: #ce574f;
+}
+/* showcase section */
+.products .showcase {
+  background-color: #ffb7cb;
+  padding: 20rem 2rem 1rem;
+}
+.showcase .showcase__photos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 8rem;
+}
+.showcase__photos .album {
+  /* margin: 20px 10px; */
+  max-width: 350px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+.album .album__photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
+  border: 1px solid #aaaaaab7;
+  margin: 10px;
+  overflow: hidden;
+}
+.album img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.showcase .showcase__counts {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.showcase__counts .count {
+  display: grid;
+  justify-items: center;
+}
+.showcase__counts .count .count-value {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 1.8rem;
+  color: #fff;
+}
+.showcase__counts .count .count-label {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #ce574f;
+}
+@media screen and (max-width: 760px) {
+  .showcase__photos .album {
+    max-width: 100%;
+  }
+  .album:nth-child(even) .single {
+    grid-column: 1/2;
+    grid-row-start: 1;
+  }
+  .album:nth-child(even) .double {
+    grid-column: 2/3;
+  }
+}
+/* contact */
+.contacts {
+  padding: 5rem 4rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.contacts form {
+  display: grid;
+  row-gap: 1rem;
+  min-width: 300px;
+}
+.contacts form input,
+.contacts form textarea {
+  padding: 0.8rem;
+  width: 100%;
+  border: 1px solid #ce574f;
+  font-family: "Roboto", sans-serif;
+  outline: none;
+}
+.contacts form input::placeholder,
+.contacts form textarea::placeholder {
+  color: #ce574f;
+}
+.contacts form button {
+  padding: 0.5rem;
+  background-color: #ce574f;
+  color: #fff;
+  border: 1px solid #ce574f;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.contacts form button:hover {
+  background-color: #ce574f3d;
+  color: #ce574f;
+}
+.contacts section {
+  display: grid;
+  justify-items: center;
+  min-width: 300px;
+}
+.contacts section .social-icons {
+  display: flex;
+}
+.contacts section .social-icons a {
+  padding: 0.9rem;
+  color: #ce574f;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin: 10px;
+}
+.contacts section .social-icons a:hover {
+  border-color: #ce574f;
+}
+.contacts section>span,
+.contact footer>span{
+  font-weight: 500;
+  font-size: .85rem;
+}
+.contact footer {
+  text-align: center;
+  color: #ce574f;
+}
+.contact footer nav {
+  display: flex;
+  justify-content: center;
+}
+.contact footer nav a {
+  padding: .5rem .89rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #ce574f;
+  border-radius: 5px;
+  margin: .4rem;
+}
+.contact footer nav a:hover,
+.contact footer nav a.active {
+  background-color: #ffb7cb;
+}
+.contact footer>span {
+  padding-bottom: 1rem;
+}
