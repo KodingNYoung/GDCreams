@@ -10,7 +10,9 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./css/style.css" />
-    <title>GD | Get iced with creams</title>
+    <link rel="stylesheet" href="./css//shop.css" />
+
+    <title>GDCreams | Shop</title>
   </head>
   <body>
     <section class="navbar">
@@ -24,19 +26,15 @@
       </div>
       <div class="navbar__left">
         <nav class="nav-links">
-          <a href="#hero" class="active nav-link">
+          <a href="./index.html#hero" class="nav-link">
             <span>home</span>
             <i class="fas fa-home navbar__link-icon"></i>
           </a>
-          <a href="#about" class="nav-link">
+          <a href="./index.html#about" class="nav-link">
             <span>about</span>
             <i class="fas fa-info navbar__link-icon"></i>
           </a>
-          <a href="#products" class="nav-link">
-            <span>products</span>
-            <i class="fas fa-ice-cream navbar__link-icon"></i>
-          </a>
-          <a href="./shop.html">
+          <a href="#" class="nav-link active">
             <span>shop</span>
             <i class="fas fa-shopping-cart navbar__link-icon"></i>
           </a>
@@ -46,39 +44,6 @@
       <a href="#contact" class="contact-icon" id="contact-icon">
         <i class="fas fa-phone navbar__link-icon"></i>
       </a>
-    </section>
-    <section class="hero observed-section" id="hero">
-      <div class="hero__header-text">
-        <h2>
-          <span class="custom">yummy ice cream!</span>
-          <span class="custom">the best time is always</span>
-        </h2>
-        <button type="button">place order</button>
-      </div>
-      <div class="hero__image">
-        <img src="./img/hero.png" alt="hero-image" />
-      </div>
-      <div class="social-icons">
-        <a href="#"><span class="fab fa-instagram"></span></a>
-        <a href="#"><span class="fab fa-facebook-f"></span></a>
-        <a href="#"><span class="fab fa-twitter"></span></a>
-      </div>
-    </section>
-    <section class="about observed-section" id="about">
-      <div class="about__image">
-        <img src="./img/about.jpg" alt="" />
-      </div>
-      <article class="about__text">
-        <h2>about us</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea porro
-          velit, iusto esse, sequi voluptatum ad corrupti cupiditate laboriosam
-          ab magnam. Minus ad voluptatum in libero consequatur excepturi laborum
-          alias necessitatibus. Suscipit commodi aperiam ea porro recusandae
-          omnis culpa, est, fugiat sint, nisi quibusdam nobis fuga! Similique
-          eum magnam maxime.
-        </p>
-      </article>
     </section>
     <section class="products observed-section" id="products">
       <h2>our products</h2>
@@ -126,69 +91,6 @@
           <a href="#"><span class="fas fa-arrow-down"></span></a>
         </div>
       </div>
-      <div class="showcase" id="showcase">
-        <div class="showcase__photos">
-          <div class="album">
-            <div class="double">
-              <div class="album__photo">
-                <img src="./img/flavour-image 3.jpg" />
-              </div>
-              <div class="album__photo">
-                <img src="./img/images (9).jpg" alt="" />
-              </div>
-            </div>
-            <div class="single">
-              <div class="album__photo">
-                <img src="./img/unnamed (1).jpg" alt="" />
-              </div>
-            </div>
-          </div>
-          <div class="album">
-            <div class="double">
-              <div class="album__photo">
-                <img src="./img/flavour-image 3.jpg" />
-              </div>
-              <div class="album__photo">
-                <img src="./img/images (9).jpg" alt="" />
-              </div>
-            </div>
-            <div class="single">
-              <div class="album__photo">
-                <img src="./img/unnamed (1).jpg" alt="" />
-              </div>
-            </div>
-          </div>
-          <div class="album">
-            <div class="double">
-              <div class="album__photo">
-                <img src="./img/flavour-image 3.jpg" />
-              </div>
-              <div class="album__photo">
-                <img src="./img/images (9).jpg" alt="" />
-              </div>
-            </div>
-            <div class="single">
-              <div class="album__photo">
-                <img src="./img/unnamed (1).jpg" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="showcase__counts">
-          <div class="count">
-            <span class="count-value">537</span>
-            <span class="count-label">days</span>
-          </div>
-          <div class="count">
-            <span class="count-value">204</span>
-            <span class="count-label">cups served</span>
-          </div>
-          <div class="count">
-            <span class="count-value">40</span>
-            <span class="count-label">flavours</span>
-          </div>
-        </div>
-      </div>
     </section>
     <section class="contact" id="contact">
       <div class="contacts">
@@ -208,16 +110,13 @@
       </div>
       <footer>
         <nav class="nav-links">
-          <a href="#hero" class="active">
+          <a href="./index.html#hero" class="active">
             <span>home</span>
           </a>
-          <a href="#about">
+          <a href="./index.html#about">
             <span>about</span>
           </a>
-          <a href="#products">
-            <span>flavours</span>
-          </a>
-          <a href="./shop.html">
+          <a href="#">
             <span>shop</span>
           </a>
         </nav>
@@ -226,6 +125,5 @@
     </section>
     <script src="./js/state.js"></script>
     <script src="./js/script.js"></script>
-    <script src="./js/home.js"></script>
   </body>
 </html>
