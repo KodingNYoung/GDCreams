@@ -9,7 +9,7 @@
       integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./styles/css/style.css" />
     <title>GD | Get iced with creams</title>
   </head>
   <body>
@@ -22,7 +22,7 @@
           <div class="line"></div>
         </button>
       </div>
-      <div class="navbar__left">
+      <div class="navbar__right">
         <nav class="nav-links">
           <a href="#hero" class="active nav-link">
             <span>home</span>
@@ -38,10 +38,13 @@
           </a>
           <a href="./shop.html">
             <span>shop</span>
-            <i class="fas fa-shopping-cart navbar__link-icon"></i>
+            <i class="fas fa-store navbar__link-icon"></i>
           </a>
         </nav>
-        <button type="button" class="order-btn">order now</button>
+        <button type="button" class="cart-btn" id="cart-btn">
+          <i class="fas fa-shopping-cart"></i>
+          <!-- <span class="cart-badge" id="cart-badge">0</span> -->
+        </button>
       </div>
       <a href="#contact" class="contact-icon" id="contact-icon">
         <i class="fas fa-phone navbar__link-icon"></i>
@@ -82,50 +85,14 @@
     </section>
     <section class="products observed-section" id="products">
       <h2>our products</h2>
-      <div class="flavours">
-        <div class="flavour_card" id="1">
-          <div class="flavour_card__image">
-            <img src="./img/flavour-images 1.jpg" alt="" />
-          </div>
-          <div class="flavour_card__text">
-            <h3>chocolate chips flavour</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab iste
-              nesciunt, ipsa veritatis et praesentium necessitatibus nobis sed
-              aperiam eos.
-            </p>
-          </div>
-          <a href="#"><span class="fas fa-arrow-down"></span></a>
-        </div>
-        <div class="flavour_card" id="2">
-          <div class="flavour_card__image">
-            <img src="./img/flavour-image 2.jpg" alt="" />
-          </div>
-          <div class="flavour_card__text">
-            <h3>lemon flavour</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab iste
-              nesciunt, ipsa veritatis et praesentium necessitatibus nobis sed
-              aperiam eos.
-            </p>
-          </div>
-          <a href="#"><span class="fas fa-arrow-down"></span></a>
-        </div>
-        <div class="flavour_card" id="3">
-          <div class="flavour_card__image">
-            <img src="./img/flavour-image 3.jpg" alt="" />
-          </div>
-          <div class="flavour_card__text">
-            <h3>citrus flavour</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab iste
-              nesciunt, ipsa veritatis et praesentium necessitatibus nobis sed
-              aperiam eos.
-            </p>
-          </div>
-          <a href="#"><span class="fas fa-arrow-down"></span></a>
-        </div>
+      <div class="flavours-container">
+        <div class="flavours"></div>
+        <a href="./shop.html" class="see-more-link">
+          <span>See more</span>
+          <i class="fas fa-chevron-down"></i>
+        </a>
       </div>
+
       <div class="showcase" id="showcase">
         <div class="showcase__photos">
           <div class="album">
@@ -224,8 +191,128 @@
         <span>Lorem ipsum dolor sit amet consectetur adipisicing elit </span>
       </footer>
     </section>
+    <section class="cart-drawer" id="cart-drawer">
+      <div class="underlay"></div>
+      <div class="cart-drawer-content">
+        <header>
+          <h2>My GD cart</h2>
+          <button class="close-btn" id="cart-close-btn">
+            <span class="fas fa-arrow-right"></span>
+          </button>
+        </header>
+        <div class="cart">
+          <div class="cart-items">
+            <!-- <div class="item">
+              <div class="item-details">
+                <div class="item-img">
+                  <img src="./img/images (6).jpg" alt="" />
+                </div>
+                <div class="item-name-price">
+                  <h4>Chocolate flavour</h4>
+                  <span>$250</span>
+                </div>
+              </div>
+              <div class="item-quantity">
+                <button class="increment">+</button>
+                <div class="quantity">3</div>
+                <button class="increment">-</button>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-details">
+                <div class="item-img">
+                  <img src="./img/images (6).jpg" alt="" />
+                </div>
+                <div class="item-name-price">
+                  <h4>Chocolate flavour</h4>
+                  <span>$250</span>
+                </div>
+              </div>
+              <div class="item-quantity">
+                <button class="increment">+</button>
+                <div class="quantity">3</div>
+                <button class="increment">-</button>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-details">
+                <div class="item-img">
+                  <img src="./img/images (6).jpg" alt="" />
+                </div>
+                <div class="item-name-price">
+                  <h4>Chocolate flavour</h4>
+                  <span>$250</span>
+                </div>
+              </div>
+              <div class="item-quantity">
+                <button class="increment">+</button>
+                <div class="quantity">3</div>
+                <button class="increment">-</button>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-details">
+                <div class="item-img">
+                  <img src="./img/images (6).jpg" alt="" />
+                </div>
+                <div class="item-name-price">
+                  <h4>Chocolate flavour</h4>
+                  <span>$250</span>
+                </div>
+              </div>
+              <div class="item-quantity">
+                <button class="increment">+</button>
+                <div class="quantity">3</div>
+                <button class="increment">-</button>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-details">
+                <div class="item-img">
+                  <img src="./img/images (6).jpg" alt="" />
+                </div>
+                <div class="item-name-price">
+                  <h4>Chocolate flavour</h4>
+                  <span>$250</span>
+                </div>
+              </div>
+              <div class="item-quantity">
+                <button class="increment">+</button>
+                <div class="quantity">3</div>
+                <button class="increment">-</button>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-details">
+                <div class="item-img">
+                  <img src="./img/images (6).jpg" alt="" />
+                </div>
+                <div class="item-name-price">
+                  <h4>Chocolate flavour</h4>
+                  <span>$250</span>
+                </div>
+              </div>
+              <div class="item-quantity">
+                <button class="increment">+</button>
+                <div class="quantity">3</div>
+                <button class="increment">-</button>
+              </div>
+            </div> -->
+          </div>
+          <div class="total">
+            <span>Total (<span id="total-quantity"></span> items): </span>
+            <span class="price">$<span id="cart-price"></span></span>
+          </div>
+          <div class="button">
+            <button>checkout</button>
+          </div>
+        </div>
+      </div>
+    </section>
     <script src="./js/state.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/home.js"></script>
+    <script src="./js/shop.js"></script>
+    <script src="./js/cart.js"></script>
   </body>
 </html>

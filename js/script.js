@@ -1,12 +1,18 @@
-console.log(cart);
-
 // ELEMENTS
 const burger = document.querySelector(".navbar__burger");
 const navLinks = document.querySelectorAll(".nav-link");
 const navbar = document.querySelector(".navbar");
 const contactForm = document.getElementById("contact-form");
+const flavoursUI = document.querySelector(".flavours");
 
 // FUNCTIONS
+const setCart = newCart => {
+  cart = newCart;
+  localStorage.setItem("cart", JSON.stringify(newCart));
+};
+const getCart = () => {
+  return JSON.parse(localStorage.getItem("cart"));
+};
 // handler for burger click
 const handleBurgerClick = () => {
   navbar.classList.toggle("expanded");
@@ -34,7 +40,7 @@ const handlePageScroll = () => {
 };
 
 // handler for contact form submission
-const handleContactFormSubmit = (e) => {
+const handleContactFormSubmit = e => {
   e.preventDefault();
   const emailUI = e.target.querySelector("input");
   const messageUI = e.target.querySelector("textarea");
@@ -76,7 +82,12 @@ burger.addEventListener("click", handleBurgerClick);
 // for any scroll event on the page
 window.addEventListener("scroll", handlePageScroll);
 // if any navlinks is clicked
-navLinks.forEach((link) => {
+navLinks.forEach(link => {
   link.addEventListener("click", closeMenu);
 });
 contactForm.addEventListener("submit", handleContactFormSubmit);
+window.addEventListener("DOMContentLoaded", () => {
+  if (!localStorage.getItem("cart")) {
+    localStorage.setItem("cart", JSON.stringify([]));
+  }
+});

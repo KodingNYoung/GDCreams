@@ -1,0 +1,40 @@
+@import "utilities";
+@import "variables";
+.products {
+  padding-top: 4rem;
+  .flavours {
+    margin-bottom: 0rem;
+    justify-content: center;
+    .flavour_card {
+      max-width: 30%;
+      .card-footer {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 0;
+        .footer-price {
+          color: $primary-brown;
+          font-size: 1.3rem;
+          font-weight: bold;
+        }
+        .add-to-card-btn {
+          background-color: $primary-brown;
+          color: $white;
+          padding: 0.7rem;
+          border: none;
+          outline: none;
+          font-size: 1rem;
+          border-radius: 10px;
+          .fas {
+            padding-right: 0.4rem;
+          }
+          &:disabled {
+            background-color: #ccc;
+            cursor: default;
+          }
+        }
+      }
+    }
+  }
+}

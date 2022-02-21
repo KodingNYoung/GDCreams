@@ -1,0 +1,57 @@
+button {
+  cursor: pointer;
+}
+
+.products {
+  padding-top: 4rem;
+}
+
+.products .flavours {
+  margin-bottom: 0rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.products .flavours .flavour_card {
+  max-width: 30%;
+}
+
+.products .flavours .flavour_card .card-footer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem 0;
+}
+
+.products .flavours .flavour_card .card-footer .footer-price {
+  color: #ce574f;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.products .flavours .flavour_card .card-footer .add-to-card-btn {
+  background-color: #ce574f;
+  color: #fff;
+  padding: 0.7rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  border-radius: 10px;
+}
+
+.products .flavours .flavour_card .card-footer .add-to-card-btn .fas {
+  padding-right: 0.4rem;
+}
+
+.products .flavours .flavour_card .card-footer .add-to-card-btn:disabled {
+  background-color: #ccc;
+  cursor: default;
+}
