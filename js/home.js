@@ -1,5 +1,6 @@
 // elements
 const sections = document.querySelectorAll(".observed-section");
+const flavoursUI = document.querySelector(".flavours");
 
 // populating the products with state info
 const populatingFlavours = () => {

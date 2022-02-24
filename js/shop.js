@@ -1,3 +1,4 @@
+const shopCardsUI = document.querySelector(".flavours");
 // populating the products with state info
 const populateShop = () => {
   let flavourString = "";
@@ -29,7 +30,7 @@ const populateShop = () => {
           </div>
           </div>`;
   });
-  flavoursUI.innerHTML = flavourString;
+  shopCardsUI.innerHTML = flavourString;
 };
 
 // call functions on events

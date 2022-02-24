@@ -2,6 +2,7 @@ const cartOpenBtn = document.getElementById("cart-btn");
 const cartUI = document.getElementById("cart-drawer");
 const cartCloseBtn = document.getElementById("cart-close-btn");
 const cartScrim = document.querySelector(".underlay");
+const modal = document.getElementById("modal");
 
 // F U N C T I O N S
 // LOGIC FUNCTIONS
@@ -24,8 +25,8 @@ const addToCart = id => {
   const cart = getCart();
   cart.push(item);
   setCart(cart);
-  populateShop();
   handleCartBadge();
+  populateShop();
 };
 const handleQuantityIncrement = id => {
   const cart = getCart();
@@ -52,13 +53,28 @@ const handleQuantityDecrement = id => {
   setCart(newCart);
   updateCartValues();
 };
+const clearCart = () => {
+  setCart([]);
+  updateCartValues();
+};
 const removeItemFromCart = id => {
   const cart = getCart();
   const newCart = cart.filter(item => item.id !== id);
   setCart(newCart);
   updateCartValues();
 };
-
+const copyIDToClipboard = id => {};
+const handleCheckout = details => {
+  const modalElement = createModalElement(details);
+  modal.appendChild(modalElement);
+};
+const closeModal = () => {
+  const modalElement = document.querySelector(".feedback-modal");
+  modal.removeChild(modalElement);
+  clearCart();
+  handleCartClose();
+  location.reload();
+};
 // UI FUNCTIONS
 // populating the cart
 const populateCart = () => {
@@ -69,10 +85,22 @@ const populateCart = () => {
     cartItems.removeChild(child);
   });
   // populate
-  cart.forEach(item => {
-    const cartItem = createCartItem(item);
-    cartItems.append(cartItem);
-  });
+  if (cart.length) {
+    cart.forEach(item => {
+      const cartItem = createCartItem(item);
+      cartItems.append(cartItem);
+    });
+    document.getElementById("paypal-btn").style.display = "block";
+  } else {
+    const empty = document.createElement("div");
+    empty.className = "empty";
+    empty.innerHTML = `
+      <img src="${"../img/undraw_empty_cart_co35.svg"}" class="empty-img"/>
+      <span>Cart is empty, added items to cart.</span>
+    `;
+    cartItems.appendChild(empty);
+    document.getElementById("paypal-btn").style.display = "none";
+  }
 };
 const createCartItem = item => {
   const cartItem = document.createElement("div");
@@ -128,18 +156,64 @@ const handleCartBadge = () => {
 };
 const setTotalPrice = () => {
   const cartPriceUI = document.getElementById("cart-price");
-  cartPriceUI.textContent = calculatePrice();
+  cartPriceUI.textContent = calculatePrice() || 0;
 };
 const setTotalItemsQuantity = () => {
   const cartQuantityUI = document.getElementById("total-quantity");
-  cartQuantityUI.textContent = calculateQuantity();
+  cartQuantityUI.textContent = calculateQuantity() || 0;
 };
 const updateCartValues = () => {
   populateCart();
   setTotalItemsQuantity();
   setTotalPrice();
   handleCartBadge();
-  populateShop();
+};
+const createModalElement = details => {
+  const modalContainer = document.createElement("section");
+  modalContainer.classList = "feedback-modal";
+  modalContainer.innerHTML = `
+  <div class="modal-scrim"></div>
+        <div class="modal">
+          <div class="modal-content">
+            <div class="icon">
+              <img src="${
+                details?.status === "COMPLETED"
+                  ? "./img/checked.png"
+                  : "./img/failed.png"
+              }" alt="checked" />
+              <span class="status ${
+                details?.status === "COMPLETED" ? "success" : "failed"
+              }">${
+    details?.status === "COMPLETED" ? "success" : "failed"
+  }</span>
+            </div>
+            <div class="info-item">
+              <div class="item-key">Quantity of item(s)</div>
+              <div class="item-value">${calculateQuantity()}</div>
+            </div>
+            <div class="info-item">
+              <div class="item-key">Price of item(s)</div>
+              <div class="item-value">${calculatePrice()}</div>
+            </div>
+            <div class="info-item">
+              <div class="item-key">Payer Name</div>
+              <div class="item-value">${details?.payer?.name?.given_name} ${
+    details?.payer?.name?.surname
+  }</div>
+            </div>
+            <div class="info-item">
+              <div class="item-key">Transaction ID</div>
+              <button class="item-value copy-btn">
+                <span>${details?.id}</span>
+              </button>
+            </div>
+          </div>
+          <footer>
+            <button class="done-btn" onclick="closeModal()">done</button>
+          </footer>
+        </div>
+  `;
+  return modalContainer;
 };
 
 // handlers for cart operations

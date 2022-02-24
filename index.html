@@ -10,6 +10,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./styles/css/style.css" />
+    <script src="https://www.paypal.com/sdk/js?client-id=AbtPsE03vzJsp3oDiVYS3uCADdayC2pYWAS3G5uU6hZuk8zG-EH55VN8s1ELH8j-eb4YeZOiB68LDR5M"></script>
     <title>GD | Get iced with creams</title>
   </head>
   <body>
@@ -201,118 +202,21 @@
           </button>
         </header>
         <div class="cart">
-          <div class="cart-items">
-            <!-- <div class="item">
-              <div class="item-details">
-                <div class="item-img">
-                  <img src="./img/images (6).jpg" alt="" />
-                </div>
-                <div class="item-name-price">
-                  <h4>Chocolate flavour</h4>
-                  <span>$250</span>
-                </div>
-              </div>
-              <div class="item-quantity">
-                <button class="increment">+</button>
-                <div class="quantity">3</div>
-                <button class="increment">-</button>
-              </div>
-            </div>
-            <div class="item">
-              <div class="item-details">
-                <div class="item-img">
-                  <img src="./img/images (6).jpg" alt="" />
-                </div>
-                <div class="item-name-price">
-                  <h4>Chocolate flavour</h4>
-                  <span>$250</span>
-                </div>
-              </div>
-              <div class="item-quantity">
-                <button class="increment">+</button>
-                <div class="quantity">3</div>
-                <button class="increment">-</button>
-              </div>
-            </div>
-            <div class="item">
-              <div class="item-details">
-                <div class="item-img">
-                  <img src="./img/images (6).jpg" alt="" />
-                </div>
-                <div class="item-name-price">
-                  <h4>Chocolate flavour</h4>
-                  <span>$250</span>
-                </div>
-              </div>
-              <div class="item-quantity">
-                <button class="increment">+</button>
-                <div class="quantity">3</div>
-                <button class="increment">-</button>
-              </div>
-            </div>
-            <div class="item">
-              <div class="item-details">
-                <div class="item-img">
-                  <img src="./img/images (6).jpg" alt="" />
-                </div>
-                <div class="item-name-price">
-                  <h4>Chocolate flavour</h4>
-                  <span>$250</span>
-                </div>
-              </div>
-              <div class="item-quantity">
-                <button class="increment">+</button>
-                <div class="quantity">3</div>
-                <button class="increment">-</button>
-              </div>
-            </div>
-            <div class="item">
-              <div class="item-details">
-                <div class="item-img">
-                  <img src="./img/images (6).jpg" alt="" />
-                </div>
-                <div class="item-name-price">
-                  <h4>Chocolate flavour</h4>
-                  <span>$250</span>
-                </div>
-              </div>
-              <div class="item-quantity">
-                <button class="increment">+</button>
-                <div class="quantity">3</div>
-                <button class="increment">-</button>
-              </div>
-            </div>
-            <div class="item">
-              <div class="item-details">
-                <div class="item-img">
-                  <img src="./img/images (6).jpg" alt="" />
-                </div>
-                <div class="item-name-price">
-                  <h4>Chocolate flavour</h4>
-                  <span>$250</span>
-                </div>
-              </div>
-              <div class="item-quantity">
-                <button class="increment">+</button>
-                <div class="quantity">3</div>
-                <button class="increment">-</button>
-              </div>
-            </div> -->
-          </div>
+          <div class="cart-items"></div>
           <div class="total">
             <span>Total (<span id="total-quantity"></span> items): </span>
             <span class="price">$<span id="cart-price"></span></span>
           </div>
-          <div class="button">
-            <button>checkout</button>
-          </div>
+          <div class="button" id="paypal-btn"></div>
         </div>
       </div>
     </section>
+    <div id="modal"></div>
     <script src="./js/state.js"></script>
     <script src="./js/script.js"></script>
-    <script src="./js/home.js"></script>
     <script src="./js/shop.js"></script>
+    <script src="./js/home.js"></script>
     <script src="./js/cart.js"></script>
+    <script src="./js/paypal.js"></script>
   </body>
 </html>

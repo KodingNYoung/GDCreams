@@ -3,7 +3,6 @@ const burger = document.querySelector(".navbar__burger");
 const navLinks = document.querySelectorAll(".nav-link");
 const navbar = document.querySelector(".navbar");
 const contactForm = document.getElementById("contact-form");
-const flavoursUI = document.querySelector(".flavours");
 
 // FUNCTIONS
 const setCart = newCart => {
