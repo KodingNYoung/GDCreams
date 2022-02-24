@@ -89,4 +89,5 @@ window.addEventListener("DOMContentLoaded", () => {
   if (!localStorage.getItem("cart")) {
     localStorage.setItem("cart", JSON.stringify([]));
   }
+  AOS.init();
 });

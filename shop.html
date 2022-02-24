@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
@@ -53,13 +54,13 @@
       <div class="flavours"></div>
     </section>
     <section class="contact" id="contact">
-      <div class="contacts">
-        <form id="contact-form">
+      <div class="contacts" data-aos="fade-up">
+        <form id="contact-form" data-aos="fade-right">
           <input type="email" name="email" placeholder="Email" />
           <textarea name="message" rows="3" placeholder="Message"></textarea>
           <button type="submit">send message</button>
         </form>
-        <section>
+        <section data-aos="fade-left">
           <div class="social-icons">
             <a href="#"><span class="fab fa-instagram"></span></a>
             <a href="#"><span class="fab fa-facebook-f"></span></a>
@@ -103,6 +104,7 @@
       </div>
     </section>
     <div id="modal"></div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="./js/state.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/shop.js"></script>

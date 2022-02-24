@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
@@ -52,14 +53,18 @@
       </a>
     </section>
     <section class="hero observed-section" id="hero">
-      <div class="hero__header-text">
+      <div
+        class="hero__header-text"
+        data-aos="fade-right"
+        data-aos-once="false"
+      >
         <h2>
           <span class="custom">yummy ice cream!</span>
           <span class="custom">the best time is always</span>
         </h2>
         <button type="button">place order</button>
       </div>
-      <div class="hero__image">
+      <div class="hero__image" data-aos="fade-left" data-aos-once="false">
         <img src="./img/hero.png" alt="hero-image" />
       </div>
       <div class="social-icons">
@@ -69,10 +74,10 @@
       </div>
     </section>
     <section class="about observed-section" id="about">
-      <div class="about__image">
+      <div class="about__image" data-aos="fade-up">
         <img src="./img/about.jpg" alt="" />
       </div>
-      <article class="about__text">
+      <article class="about__text" data-aos="fade-up">
         <h2>about us</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea porro
@@ -98,60 +103,60 @@
         <div class="showcase__photos">
           <div class="album">
             <div class="double">
-              <div class="album__photo">
+              <div class="album__photo" data-aos="zoom-in" data-aos-delay="100">
                 <img src="./img/flavour-image 3.jpg" />
               </div>
-              <div class="album__photo">
+              <div class="album__photo" data-aos="zoom-in" data-aos-delay="200">
                 <img src="./img/images (9).jpg" alt="" />
               </div>
             </div>
             <div class="single">
-              <div class="album__photo">
+              <div class="album__photo" data-aos="zoom-in" data-aos-delay="300">
                 <img src="./img/unnamed (1).jpg" alt="" />
               </div>
             </div>
           </div>
           <div class="album">
             <div class="double">
-              <div class="album__photo">
+              <div class="album__photo" data-aos="zoom-in" data-aos-delay="400">
                 <img src="./img/flavour-image 3.jpg" />
               </div>
-              <div class="album__photo">
+              <div class="album__photo" data-aos="zoom-in" data-aos-delay="500">
                 <img src="./img/images (9).jpg" alt="" />
               </div>
             </div>
             <div class="single">
-              <div class="album__photo">
+              <div class="album__photo" data-aos="zoom-in" data-aos-delay="600">
                 <img src="./img/unnamed (1).jpg" alt="" />
               </div>
             </div>
           </div>
           <div class="album">
             <div class="double">
-              <div class="album__photo">
+              <div class="album__photo" data-aos="zoom-in" data-aos-delay="700">
                 <img src="./img/flavour-image 3.jpg" />
               </div>
-              <div class="album__photo">
+              <div class="album__photo" data-aos="zoom-in" data-aos-delay="800">
                 <img src="./img/images (9).jpg" alt="" />
               </div>
             </div>
             <div class="single">
-              <div class="album__photo">
+              <div class="album__photo" data-aos="zoom-in" data-aos-delay="900">
                 <img src="./img/unnamed (1).jpg" alt="" />
               </div>
             </div>
           </div>
         </div>
         <div class="showcase__counts">
-          <div class="count">
+          <div class="count" data-aos="zoom-out" data-aos-delay="900">
             <span class="count-value">537</span>
             <span class="count-label">days</span>
           </div>
-          <div class="count">
+          <div class="count" data-aos="zoom-out" data-aos-delay="600">
             <span class="count-value">204</span>
             <span class="count-label">cups served</span>
           </div>
-          <div class="count">
+          <div class="count" data-aos="zoom-out" data-aos-delay="300">
             <span class="count-value">40</span>
             <span class="count-label">flavours</span>
           </div>
@@ -212,6 +217,7 @@
       </div>
     </section>
     <div id="modal"></div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="./js/state.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/shop.js"></script>

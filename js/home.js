@@ -5,8 +5,10 @@ const flavoursUI = document.querySelector(".flavours");
 // populating the products with state info
 const populatingFlavours = () => {
   let flavourString = "";
-  flavours.splice(0, 3).forEach(flavour => {
-    flavourString += `<div class="flavour_card">
+  flavours.splice(0, 3).forEach((flavour, index) => {
+    flavourString += `<div class="flavour_card" data-aos="fade-left" data-aos-delay="${
+      100 * index
+    }">
             <div class="flavour_card__image">
               <img src="${flavour.src}" alt="" />
             </div>
